@@ -8,22 +8,14 @@ flipflop_height = ball_radius * 4;
 
 module FlipFlop()
 {
-	difference()
+	union()
 	{
-		union()
-		{
-			Switch();
+		Switch();
 
-			translate([0, flipflop_height/4])
-			{
-				flipflop_arm();
-				mirror([1, 0]) flipflop_arm();
-			}
-		}
-
-		union()
+		translate([0, flipflop_height/4])
 		{
-			circle(switch_hole_radius);
+			flipflop_arm();
+			mirror([1, 0]) flipflop_arm();
 		}
 	}
 }
