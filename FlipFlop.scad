@@ -1,6 +1,6 @@
 include<vars.scad>
 
-//FlipFlop();
+FlipFlop();
 
 flipflop_width = ball_radius * 2;
 flipflop_height = ball_radius * 4;
@@ -11,11 +11,11 @@ module FlipFlop()
 	{
 		union()
 		{
-			square([flipflop_width, flipflop_height], center=true);
-			translate([0, flipflop_height/2]) circle(ball_radius);
-			translate([0, -flipflop_height/2]) circle(ball_radius);
+			translate([0, flipflop_height/2])square([flipflop_width, flipflop_height], center=true);
+			translate([0, flipflop_height]) circle(ball_radius);
+			circle(ball_radius);
 
-			translate([0, -flipflop_height/4])
+			translate([0, flipflop_height/4])
 			{
 				flipflop_arm();
 				mirror([1, 0]) flipflop_arm();
@@ -24,7 +24,7 @@ module FlipFlop()
 
 		union()
 		{
-			translate([0, -flipflop_height/2]) circle(switch_hole_radius);
+			circle(switch_hole_radius);
 		}
 	}
 }
