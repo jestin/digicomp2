@@ -4,5 +4,5 @@ include<vars.scad>
 
 module DigiComp_Board()
 {
-	square([200, 400]);
+	square([400, 800]);
 }
