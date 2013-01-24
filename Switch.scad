@@ -7,14 +7,16 @@ switch_height = ball_radius * 4;
 
 module Switch()
 {
+	pitch = 15;
+
 	difference()
 	{
 		union()
 		{
 			intersection()
 			{
-				arm();
-				rotate([0, 0, 15]) arm();
+				rotate([0, 0, pitch/2]) arm();
+				rotate([0, 0, -pitch/2]) arm();
 			}
 		}
 
