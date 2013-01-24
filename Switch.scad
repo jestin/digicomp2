@@ -23,6 +23,7 @@ module Switch()
 		union()
 		{
 			circle(switch_hole_radius);
+			translate([0, ball_radius]) circle(pin_hole_radius);
 		}
 	}
 }
