@@ -8,6 +8,7 @@ include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 
 DigiComp_Board();
+Parts();
 
 translate([0, -100, 0])
 {

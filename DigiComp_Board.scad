@@ -11,7 +11,7 @@ board_width = 420;
 board_height = 800;
 
 // part locations
-reservoir = [150, 730];
+reservoir = [120, 736];
 regulator = [370, 710];
 
 multiply = [200, 640];
@@ -24,8 +24,8 @@ off = [380, 535];
 
 module DigiComp_Board()
 {
-	reservoir_width = ball_radius * 30;
-	reservoir_height = ball_radius * 4;
+	reservoir_width = ball_radius * 35;
+	reservoir_height = ball_radius * 5;
 
 	difference()
 	{
