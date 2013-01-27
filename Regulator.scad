@@ -1,6 +1,9 @@
 include<vars.scad>
+include<Path.scad>
 
 //Regulator();
+
+regulator_radius = ball_radius * 3;
 
 module Regulator()
 {
@@ -8,7 +11,7 @@ module Regulator()
 	{
 		union()
 		{
-			circle(ball_radius * 2.5);
+			circle(regulator_radius);
 		}
 
 		union()
@@ -16,14 +19,20 @@ module Regulator()
 			// axel hole
 			circle(switch_hole_radius);
 
-			// hole for attachmentto regulator arm
+			// hole for attachment to regulator arm
 			rotate([0, 0, -35]) translate([ball_radius, 0]) circle(pin_hole_radius);
 
 			// hole for pin that restricts motion
 			translate([0, -ball_radius]) circle(pin_hole_radius);
 
 			// gap for ball
-			rotate([0, 0, -45]) translate([-ball_radius * 2, 0]) circle(ball_radius * 1.2);
+			rotate([0, 0, -45]) translate([-ball_radius * 2, 0])
+			{
+				Path(90, ball_radius * 3);
+
+				// ball for sizing
+				%circle(ball_radius);
+			}
 		}
 	}
 }

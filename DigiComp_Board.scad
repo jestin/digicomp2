@@ -12,7 +12,7 @@ board_height = 800;
 
 // part locations
 reservoir = [120, 736];
-regulator = [370, 710];
+regulator = [375, 707];
 
 multiply = [200, 640];
 clear = [260, 605];
