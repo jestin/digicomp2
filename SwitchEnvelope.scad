@@ -2,6 +2,8 @@ include<vars.scad>
 include<Switch.scad>
 
 //Switch();
+//rotate([0, 0, 45]) Switch();
+//rotate([0, 0, -45]) Switch();
 //%SwitchEnvelope();
 
 module SwitchEnvelope()
@@ -19,7 +21,7 @@ module SwitchEnvelope()
 				union()
 				{
 					translate([0, envelope_radius/2])
-					scale([1.5,1])
+					scale([1.4,1])
 					rotate([0,0,30])
 					circle(envelope_radius, $fn=3);
 				}
