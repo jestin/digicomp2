@@ -4,7 +4,9 @@ include<Regulator.scad>
 //Regulator();
 //%RegulatorEnvelope();
 
+regulator_envelope_radius = ball_radius * 2.75;
+
 module RegulatorEnvelope()
 {
-	circle(ball_radius * 2.75);
+	circle(regulator_envelope_radius);
 }
