@@ -21,7 +21,7 @@ module SwitchEnvelope()
 				union()
 				{
 					translate([0, envelope_radius/2])
-					scale([1.4,1])
+					scale([1.35,1])
 					rotate([0,0,30])
 					circle(envelope_radius, $fn=3);
 				}
@@ -30,7 +30,7 @@ module SwitchEnvelope()
 
 		union()
 		{
-			translate([0, -envelope_radius/2]) square([envelope_radius * 2, envelope_radius - (ball_radius * 2)], center = true);
+			translate([0, -(envelope_radius/2) - 2]) square([envelope_radius * 2, envelope_radius - (ball_radius * 2)], center = true);
 		}
 	}
 }
