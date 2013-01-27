@@ -5,6 +5,7 @@ include<FlipFlopEnvelope.scad>
 include<Switch.scad>
 include<SwitchEnvelope.scad>
 include<Regulator.scad>
+include<RegulatorEnvelope.scad>
 
 DigiComp_Board();
 
@@ -20,4 +21,8 @@ translate([150, -100, 0])
 	%FlipFlopEnvelope();
 }
 
-translate([300, -100, 0]) Regulator();
+translate([300, -100, 0])
+{
+	Regulator();
+	%RegulatorEnvelope();
+}
