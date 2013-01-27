@@ -5,7 +5,7 @@ include<Switch.scad>
 
 flipflop_width = ball_radius * 2;
 flipflop_height = ball_radius * 4;
-flipflop_arm_width = 7;
+flipflop_arm_width = 3;
 flipflop_arm_radius = ball_radius * 1.75;
 flipflop_arm_offset = (flipflop_width / 2) + (flipflop_arm_radius - flipflop_arm_width) - 1.5;
 
