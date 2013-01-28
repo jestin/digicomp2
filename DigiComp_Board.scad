@@ -28,6 +28,15 @@ d1 = [100, 555];
 d2 = [140, 605];
 d3 = [180, 555];
 
+mq1 = [60, 505];
+mq2 = [60, 455];
+mq3 = [60, 405];
+
+m1 = [220, 505];
+m2 = [];
+m3 = [];
+m4 = [];
+
 module DigiComp_Board()
 {
 	reservoir_width = ball_radius * 35;
@@ -104,11 +113,52 @@ module DigiComp_Board()
 			translate(d1)
 			{
 				render() FlipFlopEnvelope();
+				translate([0, -ball_radius])
+				{
+					Path(100, ball_radius * 5);
+				}
 			}
 
 			translate(d3)
 			{
 				render() FlipFlopEnvelope();
+				translate([0, -ball_radius])
+				{
+					Path(100, ball_radius * 5);
+					Path(-100, ball_radius * 5);
+				}
+			}
+
+			translate(mq1)
+			{
+				render() FlipFlopEnvelope();
+				translate([-ball_radius* 3, -ball_radius * 2])
+				{
+					circle(ball_radius * 2);
+				}
+			}
+
+			translate(mq2)
+			{
+				render() FlipFlopEnvelope();
+				translate([-ball_radius* 3, -ball_radius * 2])
+				{
+					circle(ball_radius * 2);
+				}
+			}
+
+			translate(mq3)
+			{
+				render() FlipFlopEnvelope();
+				translate([-ball_radius* 3, -ball_radius * 2])
+				{
+					circle(ball_radius * 2);
+				}
+			}
+
+			translate(m1)
+			{
+				render() SwitchEnvelope();
 			}
 		}
 	}
@@ -125,4 +175,8 @@ module Parts()
 	translate(d2) render() FlipFlop();
 	translate(d1) render() FlipFlop();
 	translate(d3) render() FlipFlop();
+	translate(mq1) render() FlipFlop();
+	translate(mq2) render() FlipFlop();
+	translate(mq3) render() FlipFlop();
+	translate(m1) render() Switch();
 }
