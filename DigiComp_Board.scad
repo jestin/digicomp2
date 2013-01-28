@@ -7,6 +7,9 @@ include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 include<Path.scad>
 
+//DigiComp_Board();
+//color([0.8, 0, 0]) Parts();
+
 // dimensions
 board_width = 420;
 board_height = 800;
@@ -18,10 +21,12 @@ regulator = [375, 707];
 multiply = [200, 640];
 clear = [260, 605];
 count = [320, 570];
-off = [380, 535];
 
-//DigiComp_Board();
-//color([0.8, 0, 0]) Parts();
+cf1 = [380, 535];
+
+d1 = [100, 555];
+d2 = [140, 605];
+d3 = [180, 555];
 
 module DigiComp_Board()
 {
@@ -69,7 +74,6 @@ module DigiComp_Board()
 				translate([0, ball_radius])
 				{
 					Path(-100, ball_radius * 9);
-					Path(100, ball_radius * 9);
 				}
 			}
 
@@ -79,17 +83,32 @@ module DigiComp_Board()
 				translate([0, ball_radius])
 				{
 					Path(-100, ball_radius * 9);
-					Path(100, ball_radius * 9);
 				}
 			}
 
-			translate(off)
+			translate(cf1)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(d2)
 			{
 				render() FlipFlopEnvelope();
 				translate([0, -ball_radius])
 				{
-					Path(100, ball_radius * 9);
+					Path(100, ball_radius * 5);
+					Path(-100, ball_radius * 5);
 				}
+			}
+
+			translate(d1)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(d3)
+			{
+				render() FlipFlopEnvelope();
 			}
 		}
 	}
@@ -102,5 +121,8 @@ module Parts()
 	translate(multiply) render() Switch();
 	translate(clear) render() Switch();
 	translate(count) render() Switch();
-	translate(off) render() FlipFlop();
+	translate(cf1) render() FlipFlop();
+	translate(d2) render() FlipFlop();
+	translate(d1) render() FlipFlop();
+	translate(d3) render() FlipFlop();
 }
