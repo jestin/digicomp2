@@ -31,7 +31,7 @@ module Regulator()
 				Path(90, ball_radius * 3);
 
 				// ball for sizing
-				%circle(ball_radius);
+				%sphere(ball_radius);
 			}
 		}
 	}
