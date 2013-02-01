@@ -7,8 +7,8 @@ include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 include<Path.scad>
 
-//DigiComp_Board();
-//color([0.8, 0, 0]) Parts();
+DigiComp_Board();
+color([0.8, 0, 0]) Parts();
 
 // dimensions
 board_width = 420;
@@ -31,11 +31,12 @@ d3 = [180, 555];
 mq1 = [60, 505];
 mq2 = [60, 455];
 mq3 = [60, 405];
+mqReturn = [60, 395];
 
 m1 = [220, 505];
-m2 = [];
-m3 = [];
-m4 = [];
+m2 = [220, 450];
+m3 = [220, 395];
+m4 = [220, 340];
 
 module DigiComp_Board()
 {
@@ -154,9 +155,31 @@ module DigiComp_Board()
 				{
 					circle(ball_radius * 2);
 				}
+
+				translate([0, -10]) Path(-100, ball_radius * 20);
+			}
+
+			translate(mqReturn)
+			{
+				square([ball_radius * 5, ball_radius * 17]);
 			}
 
 			translate(m1)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(m2)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(m3)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(m4)
 			{
 				render() SwitchEnvelope();
 			}
@@ -179,4 +202,7 @@ module Parts()
 	translate(mq2) render() FlipFlop();
 	translate(mq3) render() FlipFlop();
 	translate(m1) render() Switch();
+	translate(m2) render() Switch();
+	translate(m3) render() Switch();
+	translate(m4) render() Switch();
 }
