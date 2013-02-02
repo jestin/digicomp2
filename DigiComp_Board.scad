@@ -7,8 +7,8 @@ include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 include<Path.scad>
 
-DigiComp_Board();
-color([0.8, 0, 0]) Parts();
+//DigiComp_Board();
+//color([0.8, 0, 0]) Parts();
 
 // dimensions
 board_width = 420;
@@ -37,6 +37,16 @@ m1 = [220, 505];
 m2 = [220, 450];
 m3 = [220, 395];
 m4 = [220, 340];
+
+a1 = [300, 460];
+a2 = [300, 405];
+a3 = [300, 350];
+a4 = [300, 295];
+a5 = [300, 240];
+a6 = [300, 185];
+a7 = [300, 130];
+
+aReturn = [277, 130];
 
 module DigiComp_Board()
 {
@@ -118,6 +128,18 @@ module DigiComp_Board()
 				{
 					Path(100, ball_radius * 5);
 				}
+
+				translate([ball_radius * 2.5, 0])
+				{
+					rotate(-170)
+					{
+						Path(0, ball_radius * 16);
+						translate([0, ball_radius * 16])
+						{
+							Path(65, ball_radius * 11);
+						}
+					}
+				}
 			}
 
 			translate(d3)
@@ -125,8 +147,19 @@ module DigiComp_Board()
 				render() FlipFlopEnvelope();
 				translate([0, -ball_radius])
 				{
-					Path(100, ball_radius * 5);
 					Path(-100, ball_radius * 5);
+				}
+
+				translate([-ball_radius * 3, 0])
+				{
+					rotate(-170)
+					{
+						Path(0, ball_radius * 9);
+						translate([0, ball_radius * 9])
+						{
+							Path(65, ball_radius * 5);
+						}
+					}
 				}
 			}
 
@@ -167,21 +200,65 @@ module DigiComp_Board()
 			translate(m1)
 			{
 				render() SwitchEnvelope();
+				Path(-100, ball_radius * 10);
 			}
 
 			translate(m2)
 			{
 				render() SwitchEnvelope();
+				Path(-100, ball_radius * 10);
 			}
 
 			translate(m3)
 			{
 				render() SwitchEnvelope();
+				Path(-100, ball_radius * 10);
 			}
 
 			translate(m4)
 			{
 				render() SwitchEnvelope();
+				Path(-100, ball_radius * 10);
+			}
+
+			translate(a1)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(a2)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(a3)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(a4)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(a5)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(a6)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(a7)
+			{
+				render() FlipFlopEnvelope();
+			}
+
+			translate(aReturn)
+			{
+				square([ball_radius * 3, ball_radius * 48]);
 			}
 		}
 	}
@@ -189,20 +266,27 @@ module DigiComp_Board()
 
 module Parts()
 {
-	translate(regulator) Regulator();
+	translate(regulator) rotate(0) Regulator();
 
-	translate(multiply) render() Switch();
-	translate(clear) render() Switch();
-	translate(count) render() Switch();
-	translate(cf1) render() FlipFlop();
-	translate(d2) render() FlipFlop();
-	translate(d1) render() FlipFlop();
-	translate(d3) render() FlipFlop();
-	translate(mq1) render() FlipFlop();
-	translate(mq2) render() FlipFlop();
-	translate(mq3) render() FlipFlop();
-	translate(m1) render() Switch();
-	translate(m2) render() Switch();
-	translate(m3) render() Switch();
-	translate(m4) render() Switch();
+	translate(multiply) rotate(0) render() Switch();
+	translate(clear) rotate(0) render() Switch();
+	translate(count) rotate(0) render() Switch();
+	translate(cf1) rotate(0) render() FlipFlop();
+	translate(d2) rotate(0) render() FlipFlop();
+	translate(d1) rotate(0) render() FlipFlop();
+	translate(d3) rotate(0) render() FlipFlop();
+	translate(mq1) rotate(0) render() FlipFlop();
+	translate(mq2) rotate(0) render() FlipFlop();
+	translate(mq3) rotate(0) render() FlipFlop();
+	translate(m1) rotate(0) render() Switch();
+	translate(m2) rotate(0) render() Switch();
+	translate(m3) rotate(0) render() Switch();
+	translate(m4) rotate(0) render() Switch();
+	translate(a1) rotate(0) render() FlipFlop();
+	translate(a2) rotate(0) render() FlipFlop();
+	translate(a3) rotate(0) render() FlipFlop();
+	translate(a4) rotate(0) render() FlipFlop();
+	translate(a5) rotate(0) render() FlipFlop();
+	translate(a6) rotate(0) render() FlipFlop();
+	translate(a7) rotate(0) render() FlipFlop();
 }
