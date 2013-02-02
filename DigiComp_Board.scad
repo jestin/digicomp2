@@ -194,7 +194,7 @@ module DigiComp_Board()
 
 			translate(mqReturn)
 			{
-				square([ball_radius * 5, ball_radius * 17]);
+				square([ball_radius * 6, ball_radius * 17]);
 			}
 
 			translate(m1)
