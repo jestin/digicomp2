@@ -7,8 +7,5 @@ include<SwitchEnvelope.scad>
 include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 
-linear_extrude(height = thickness)
-{
-	DigiComp_Board();
-	color([0.8, 0, 0])Parts();
-}
+linear_extrude(height = thickness) DigiComp_Board();
+color([0.8, 0, 0]) linear_extrude(height = thickness)Parts();
