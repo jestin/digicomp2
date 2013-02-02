@@ -15,7 +15,7 @@ module FlipFlopEnvelope()
 	{
 		union()
 		{
-			circle(ball_radius * 3);
+			circle(ball_radius * 3.25);
 			SwitchEnvelope();
 		}
 

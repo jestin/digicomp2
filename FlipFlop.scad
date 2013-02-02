@@ -36,6 +36,8 @@ module flipflop_arm()
 				{
 					square([flipflop_arm_radius * 1.5, flipflop_arm_radius]);
 				}
+				// ball for sizing
+				%sphere(ball_radius);
 			}
 		}
 		translate([flipflop_arm_offset, 0]) circle(flipflop_arm_radius - flipflop_arm_width);
