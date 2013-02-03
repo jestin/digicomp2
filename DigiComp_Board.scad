@@ -39,14 +39,21 @@ m3 = [220, 395];
 m4 = [220, 340];
 
 a1 = [300, 460];
-a2 = [300, 405];
-a3 = [300, 350];
-a4 = [300, 295];
-a5 = [300, 240];
-a6 = [300, 185];
-a7 = [300, 130];
+a2 = [300, 400];
+a3 = [300, 340];
+a4 = [300, 280];
+a5 = [300, 220];
+a6 = [300, 160];
+a7 = [300, 100];
 
-aReturn = [277, 130];
+aReturn = [277, 100];
+
+t1 = [340, 420];
+t2 = [340, 360];
+t3 = [340, 300];
+t4 = [340, 240];
+t5 = [340, 180];
+t6 = [340, 120];
 
 module DigiComp_Board()
 {
@@ -157,7 +164,7 @@ module DigiComp_Board()
 						Path(0, ball_radius * 9);
 						translate([0, ball_radius * 9])
 						{
-							Path(65, ball_radius * 5);
+							Path(65, ball_radius * 6);
 						}
 					}
 				}
@@ -189,7 +196,7 @@ module DigiComp_Board()
 					circle(ball_radius * 2);
 				}
 
-				translate([0, -10]) Path(-100, ball_radius * 20);
+				translate([0, -10]) Path(-100, ball_radius * 21);
 			}
 
 			translate(mqReturn)
@@ -224,41 +231,85 @@ module DigiComp_Board()
 			translate(a1)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(a2)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(a3)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(a4)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(a5)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(a6)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(a7)
 			{
 				render() FlipFlopEnvelope();
+				Path(100, ball_radius * 4);
+				Path(-100, ball_radius * 4);
 			}
 
 			translate(aReturn)
 			{
-				square([ball_radius * 3, ball_radius * 48]);
+				square([ball_radius * 7, ball_radius * 54]);
+			}
+
+			translate(t1)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(t2)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(t3)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(t4)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(t5)
+			{
+				render() SwitchEnvelope();
+			}
+
+			translate(t6)
+			{
+				render() SwitchEnvelope();
 			}
 		}
 	}
@@ -289,4 +340,10 @@ module Parts()
 	translate(a5) rotate(0) render() FlipFlop();
 	translate(a6) rotate(0) render() FlipFlop();
 	translate(a7) rotate(0) render() FlipFlop();
+	translate(t1) rotate(0) render() Switch();
+	translate(t2) rotate(0) render() Switch();
+	translate(t3) rotate(0) render() Switch();
+	translate(t4) rotate(0) render() Switch();
+	translate(t5) rotate(0) render() Switch();
+	translate(t6) rotate(0) render() Switch();
 }
