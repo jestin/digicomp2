@@ -34,26 +34,26 @@ mq3 = [60, 405];
 mqReturn = [60, 395];
 
 m1 = [220, 505];
-m2 = [220, 450];
-m3 = [220, 395];
-m4 = [220, 340];
+m2 = [220, 445];
+m3 = [220, 385];
+m4 = [220, 325];
 
 a1 = [300, 460];
-a2 = [300, 400];
-a3 = [300, 340];
-a4 = [300, 280];
-a5 = [300, 220];
-a6 = [300, 160];
-a7 = [300, 100];
+a2 = [300, 395];
+a3 = [300, 330];
+a4 = [300, 265];
+a5 = [300, 200];
+a6 = [300, 135];
+a7 = [300, 70];
 
 aReturn = [277, 100];
 
-t1 = [340, 420];
-t2 = [340, 360];
-t3 = [340, 300];
-t4 = [340, 240];
-t5 = [340, 180];
-t6 = [340, 120];
+t1 = [335, 420];
+t2 = [335, 355];
+t3 = [335, 290];
+t4 = [335, 225];
+t5 = [335, 160];
+t6 = [335, 95];
 
 module DigiComp_Board()
 {
@@ -116,6 +116,7 @@ module DigiComp_Board()
 			translate(cf1)
 			{
 				render() FlipFlopEnvelope();
+				Path(125, ball_radius * 12);
 			}
 
 			translate(d2)
@@ -143,7 +144,7 @@ module DigiComp_Board()
 						Path(0, ball_radius * 17);
 						translate([0, ball_radius * 17])
 						{
-							Path(70, ball_radius * 11);
+							Path(63, ball_radius * 11);
 						}
 					}
 				}
@@ -154,7 +155,7 @@ module DigiComp_Board()
 				render() FlipFlopEnvelope();
 				translate([0, -ball_radius])
 				{
-					Path(-100, ball_radius * 5);
+					Path(-110, ball_radius * 5);
 				}
 
 				translate([-ball_radius * 3, 0])
@@ -164,7 +165,7 @@ module DigiComp_Board()
 						Path(0, ball_radius * 9.5);
 						translate([0, ball_radius * 9.5])
 						{
-							Path(65, ball_radius * 6);
+							Path(60, ball_radius * 6);
 						}
 					}
 				}
@@ -196,7 +197,7 @@ module DigiComp_Board()
 					circle(ball_radius * 2);
 				}
 
-				translate([0, -10]) Path(-100, ball_radius * 21);
+				translate([0, -10]) Path(-105, ball_radius * 22);
 			}
 
 			translate(mqReturn)
@@ -231,7 +232,7 @@ module DigiComp_Board()
 			translate(a1)
 			{
 				render() FlipFlopEnvelope();
-				Path(100, ball_radius * 4);
+				Path(110, ball_radius * 4);
 				Path(-100, ball_radius * 4);
 			}
 
@@ -284,32 +285,58 @@ module DigiComp_Board()
 
 			translate(t1)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
+				rotate(-100)
+				{
+					Path(0, ball_radius * 5);
+					translate([0, ball_radius * 5]) Path(-110, ball_radius * 5);
+				}
 			}
 
 			translate(t2)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
+				rotate(-100)
+				{
+					Path(0, ball_radius * 5);
+					translate([0, ball_radius * 5]) Path(-110, ball_radius * 5);
+				}
 			}
 
 			translate(t3)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
+				rotate(-100)
+				{
+					Path(0, ball_radius * 5);
+					translate([0, ball_radius * 5]) Path(-110, ball_radius * 5);
+				}
 			}
 
 			translate(t4)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
+				rotate(-100)
+				{
+					Path(0, ball_radius * 5);
+					translate([0, ball_radius * 5]) Path(-110, ball_radius * 5);
+				}
 			}
 
 			translate(t5)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
+				rotate(-100)
+				{
+					Path(0, ball_radius * 5);
+					translate([0, ball_radius * 5]) Path(-110, ball_radius * 5);
+				}
 			}
 
 			translate(t6)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
+				Path(-100, ball_radius * 5);
 			}
 		}
 	}
