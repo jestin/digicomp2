@@ -323,16 +323,20 @@ module Parts()
 	translate(clear) rotate(0) render() Switch();
 	translate(count) rotate(0) render() Switch();
 	translate(cf1) rotate(0) render() FlipFlop();
+
 	translate(d2) rotate(0) render() FlipFlop();
 	translate(d1) rotate(0) render() FlipFlop();
 	translate(d3) rotate(0) render() FlipFlop();
+
 	translate(mq1) rotate(0) render() FlipFlop();
 	translate(mq2) rotate(0) render() FlipFlop();
 	translate(mq3) rotate(0) render() FlipFlop();
+
 	translate(m1) rotate(0) render() Switch();
 	translate(m2) rotate(0) render() Switch();
 	translate(m3) rotate(0) render() Switch();
 	translate(m4) rotate(0) render() Switch();
+
 	translate(a1) rotate(0) render() FlipFlop();
 	translate(a2) rotate(0) render() FlipFlop();
 	translate(a3) rotate(0) render() FlipFlop();
@@ -340,6 +344,7 @@ module Parts()
 	translate(a5) rotate(0) render() FlipFlop();
 	translate(a6) rotate(0) render() FlipFlop();
 	translate(a7) rotate(0) render() FlipFlop();
+
 	translate(t1) rotate(0) render() Switch();
 	translate(t2) rotate(0) render() Switch();
 	translate(t3) rotate(0) render() Switch();
