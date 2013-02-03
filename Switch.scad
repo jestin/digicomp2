@@ -18,6 +18,9 @@ module Switch()
 				rotate([0, 0, pitch/2]) arm();
 				rotate([0, 0, -pitch/2]) arm();
 			}
+			
+			%translate([ball_radius * 2, 0]) sphere(ball_radius);
+			%translate([-ball_radius * 2, 0]) sphere(ball_radius);
 		}
 
 		union()

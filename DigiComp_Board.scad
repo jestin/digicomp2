@@ -140,10 +140,10 @@ module DigiComp_Board()
 				{
 					rotate(-170)
 					{
-						Path(0, ball_radius * 16);
-						translate([0, ball_radius * 16])
+						Path(0, ball_radius * 17);
+						translate([0, ball_radius * 17])
 						{
-							Path(65, ball_radius * 11);
+							Path(70, ball_radius * 11);
 						}
 					}
 				}
@@ -161,8 +161,8 @@ module DigiComp_Board()
 				{
 					rotate(-170)
 					{
-						Path(0, ball_radius * 9);
-						translate([0, ball_radius * 9])
+						Path(0, ball_radius * 9.5);
+						translate([0, ball_radius * 9.5])
 						{
 							Path(65, ball_radius * 6);
 						}
@@ -206,25 +206,25 @@ module DigiComp_Board()
 
 			translate(m1)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
 				Path(-100, ball_radius * 10);
 			}
 
 			translate(m2)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
 				Path(-100, ball_radius * 10);
 			}
 
 			translate(m3)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
 				Path(-100, ball_radius * 10);
 			}
 
 			translate(m4)
 			{
-				render() SwitchEnvelope();
+				render() SwitchEnvelope(1);
 				Path(-100, ball_radius * 10);
 			}
 

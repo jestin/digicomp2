@@ -6,7 +6,7 @@ include<Switch.scad>
 //rotate([0, 0, -45]) Switch();
 //%SwitchEnvelope();
 
-module SwitchEnvelope()
+module SwitchEnvelope(roomy)
 {
 	envelope_radius = switch_height * 1.25;
 
@@ -25,6 +25,11 @@ module SwitchEnvelope()
 					rotate([0,0,30])
 					circle(envelope_radius, $fn=3);
 				}
+			}
+
+			if(roomy == 1)
+			{
+				circle(ball_radius * 3.5);
 			}
 		}
 
