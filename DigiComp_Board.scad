@@ -31,7 +31,7 @@ d3 = [180, 655];
 mq1 = [60, 605];
 mq2 = [60, 555];
 mq3 = [60, 505];
-mqReturn = [60, 495];
+mqReturn = [60, 490];
 
 m1 = [220, 605];
 m2 = [220, 545];
@@ -364,13 +364,13 @@ module Parts()
 	translate(m3) rotate(0) render() Switch();
 	translate(m4) rotate(0) render() Switch();
 
-	translate(a1) rotate(0) render() FlipFlop();
-	translate(a2) rotate(0) render() FlipFlop();
-	translate(a3) rotate(0) render() FlipFlop();
-	translate(a4) rotate(0) render() FlipFlop();
-	translate(a5) rotate(0) render() FlipFlop();
-	translate(a6) rotate(0) render() FlipFlop();
-	translate(a7) rotate(0) render() FlipFlop();
+	translate(a1) rotate() render() FlipFlop();
+	translate(a2) rotate() render() FlipFlop();
+	translate(a3) rotate() render() FlipFlop();
+	translate(a4) rotate() render() FlipFlop();
+	translate(a5) rotate() render() FlipFlop();
+	translate(a6) rotate() render() FlipFlop();
+	translate(a7) rotate() render() FlipFlop();
 
 	translate(t1) rotate(0) render() Switch();
 	translate(t2) rotate(0) render() Switch();
