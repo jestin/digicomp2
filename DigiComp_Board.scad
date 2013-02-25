@@ -7,8 +7,8 @@ include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 include<Path.scad>
 
-//DigiComp_Board();
-//color([0.8, 0, 0]) Parts();
+DigiComp_Board();
+color([0.8, 0, 0]) Parts();
 
 // dimensions
 board_width = 420;
@@ -56,6 +56,8 @@ t5 = [335, 260];
 t6 = [335, 195];
 
 overflowHalt = [250, 130];
+complement = [350, 130];
+cf2 = [380, 90];
 
 module DigiComp_Board()
 {
@@ -277,7 +279,7 @@ module DigiComp_Board()
 			{
 				render() FlipFlopEnvelope();
 				Path(100, ball_radius * 6);
-				Path(-100, ball_radius * 4);
+				Path(-100, ball_radius * 6);
 			}
 
 			translate(aReturn)
@@ -338,12 +340,27 @@ module DigiComp_Board()
 			translate(t6)
 			{
 				render() SwitchEnvelope(1);
-				Path(-100, ball_radius * 5);
+				rotate(-100)
+				{
+					Path(0, ball_radius * 5);
+					translate([0, ball_radius * 5]) Path(-110, ball_radius * 5);
+				}
 			}
 
 			translate(overflowHalt)
 			{
 				render() SwitchEnvelope(1);
+			}
+
+			translate(complement)
+			{
+				render() SwitchEnvelope(1);
+				translate([ball_radius * 2, 0]) Path(-160, ball_radius * 3);
+			}
+
+			translate(cf2)
+			{
+				render() FlipFlopEnvelope();
 			}
 		}
 	}
@@ -377,7 +394,7 @@ module Parts()
 	translate(a4) rotate(0) render() FlipFlop();
 	translate(a5) rotate(0) render() FlipFlop();
 	translate(a6) rotate(0) render() FlipFlop();
-	translate(a7) rotate(45) render() FlipFlop();
+	translate(a7) rotate(0) render() FlipFlop();
 
 	translate(t1) rotate(0) render() Switch();
 	translate(t2) rotate(0) render() Switch();
@@ -386,5 +403,7 @@ module Parts()
 	translate(t5) rotate(0) render() Switch();
 	translate(t6) rotate(0) render() Switch();
 
-	translate(overflowHalt) rotate(-45) render() Switch();
+	translate(overflowHalt) rotate(0) render() Switch();
+	translate(complement) rotate(0) render() Switch();
+	translate(cf2) rotate(0) render() FlipFlop();
 }
