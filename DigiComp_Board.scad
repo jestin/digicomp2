@@ -46,7 +46,7 @@ a5 = [300, 300];
 a6 = [300, 235];
 a7 = [300, 170];
 
-aReturn = [277, 200];
+aReturn = [277, 190];
 
 t1 = [335, 520];
 t2 = [335, 455];
@@ -54,6 +54,8 @@ t3 = [335, 390];
 t4 = [335, 325];
 t5 = [335, 260];
 t6 = [335, 195];
+
+overflowHalt = [250, 130];
 
 module DigiComp_Board()
 {
@@ -274,13 +276,13 @@ module DigiComp_Board()
 			translate(a7)
 			{
 				render() FlipFlopEnvelope();
-				Path(100, ball_radius * 4);
+				Path(100, ball_radius * 6);
 				Path(-100, ball_radius * 4);
 			}
 
 			translate(aReturn)
 			{
-				square([ball_radius * 7, ball_radius * 54]);
+				square([ball_radius * 6.65, ball_radius * 56]);
 			}
 
 			translate(t1)
@@ -338,6 +340,11 @@ module DigiComp_Board()
 				render() SwitchEnvelope(1);
 				Path(-100, ball_radius * 5);
 			}
+
+			translate(overflowHalt)
+			{
+				render() SwitchEnvelope(1);
+			}
 		}
 	}
 }
@@ -364,13 +371,13 @@ module Parts()
 	translate(m3) rotate(0) render() Switch();
 	translate(m4) rotate(0) render() Switch();
 
-	translate(a1) rotate() render() FlipFlop();
-	translate(a2) rotate() render() FlipFlop();
-	translate(a3) rotate() render() FlipFlop();
-	translate(a4) rotate() render() FlipFlop();
-	translate(a5) rotate() render() FlipFlop();
-	translate(a6) rotate() render() FlipFlop();
-	translate(a7) rotate() render() FlipFlop();
+	translate(a1) rotate(0) render() FlipFlop();
+	translate(a2) rotate(0) render() FlipFlop();
+	translate(a3) rotate(0) render() FlipFlop();
+	translate(a4) rotate(0) render() FlipFlop();
+	translate(a5) rotate(0) render() FlipFlop();
+	translate(a6) rotate(0) render() FlipFlop();
+	translate(a7) rotate(45) render() FlipFlop();
 
 	translate(t1) rotate(0) render() Switch();
 	translate(t2) rotate(0) render() Switch();
@@ -378,4 +385,6 @@ module Parts()
 	translate(t4) rotate(0) render() Switch();
 	translate(t5) rotate(0) render() Switch();
 	translate(t6) rotate(0) render() Switch();
+
+	translate(overflowHalt) rotate(-45) render() Switch();
 }

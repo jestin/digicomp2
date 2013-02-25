@@ -21,7 +21,7 @@ module SwitchEnvelope(roomy)
 				union()
 				{
 					translate([0, envelope_radius/2])
-					scale([1.35,1])
+					scale([1.15,1])
 					rotate([0,0,30])
 					circle(envelope_radius, $fn=3);
 				}
