@@ -7,8 +7,8 @@ include<Regulator.scad>
 include<RegulatorEnvelope.scad>
 include<Path.scad>
 
-DigiComp_Board();
-color([0.8, 0, 0]) Parts();
+//DigiComp_Board();
+//color([0.8, 0, 0]) Parts();
 
 // dimensions
 board_width = 420;
