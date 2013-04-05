@@ -350,17 +350,20 @@ module DigiComp_Board()
 			translate(overflowHalt)
 			{
 				render() SwitchEnvelope(1);
+				translate([ball_radius * 2, 0]) Path(-110, ball_radius * 5);
 			}
 
 			translate(complement)
 			{
 				render() SwitchEnvelope(1);
 				translate([ball_radius * 2, 0]) Path(-160, ball_radius * 3);
+				translate([-ball_radius * 2, 0]) Path(110, ball_radius * 5);
 			}
 
 			translate(cf2)
 			{
 				render() FlipFlopEnvelope();
+				translate([ball_radius * 2, 0]) Path(110, ball_radius * 5);
 			}
 		}
 	}
